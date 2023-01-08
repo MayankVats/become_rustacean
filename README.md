@@ -15,3 +15,8 @@ This repository contains my learning journey of rust language. It hosts a set of
 
 `rustc` is the rust compiler.
 `cargo` is the Rust's package manager, just like `npm`.
+
+3. Run the following command to create a new **package**.
+   `cargo new hello_world`
+
+The command above will create a new package called **hello_world**.
