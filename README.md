@@ -2,21 +2,22 @@
 
 ---
 
-This repository contains my learning journey of rust language. It hosts a set of resources to learn rust and each topic will have branch of its own which is going to build up on the previous branch.
+## hello_world
 
-## Getting started with Rust
+- Running the following command `cargo new hello_world` will create a directory called **hello_world** which is the rust **package**.
 
-1. Install `rustup` - an installer for rust programming language.
-   - It can be installed from [here](https://rustup.rs/)
-   - In case compiling rust programs gives linker error you can install `C` compiler.
-2. To verify installation run the following commands:
-   - `rustc --version`
-   - `cargo --version`
+- It will create the following directory structure.
+  `hello_world/src/main.rs`
+  `hello_world/Cargo.toml`
 
-`rustc` is the rust compiler.
-`cargo` is the Rust's package manager, just like `npm`.
+### Cargo
 
-3. Run the following command to create a new **package**.
-   `cargo new hello_world`
+- It it the Rust's build system and package manager.
+- It handles tasks such as building our code, downloading the libraries our code depends on and building those libraries.
+- It helps us organize our project.
 
-The command above will create a new package called **hello_world**.
+### Cargo.toml
+
+It is the manifest file for the package which contains metadata like name, version and dependencies for the packages. It is like the `package.json` for the `npm` package.
+
+Each section in the file is defined by square brackets `[]`. For example package section is `[package]` which contains information like _name_, _version_ and _edition_. The `[dependencies]` section lists the dependecies, with version number, which current package depends upon.
