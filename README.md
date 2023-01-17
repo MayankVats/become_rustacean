@@ -2,23 +2,22 @@
 
 ---
 
-This repository contains my learning journey of rust language. It hosts a set of resources to learn rust and each topic will have branch of its own which is going to build up on the previous branch.
+## Ownership
 
-## Resources
+Ownership defines how rust manages memory. Some languages have garbage collector which regularly checks for unused value while in some languages the programmer have to explicitly de-allocate the memory.
 
-- [A half-hour to learn rust](https://fasterthanli.me/articles/a-half-hour-to-learn-rust)
-- [Tour of rust](https://tourofrust.com/)
-- [Exercism](https://exercism.org/tracks/rust)
-- [Rust book](https://doc.rust-lang.org/book/)
+But, in rust there are set of rules which the rust compiler checks and if the rules are violated then the program won't compile.
 
-## Getting started with Rust
+The rules are:
 
-1. Install `rustup` - an installer for rust programming language.
-   - It can be installed from [here](https://rustup.rs/)
-   - In case compiling rust programs gives linker error you can install `C` compiler.
-2. To verify installation run the following commands:
-   - `rustc --version`
-   - `cargo --version`
+- Each value in rust has an owner.
+- There can only be one owner at a time.
+- When owner goes out of scope the values will be dropped.
 
-`rustc` is the rust compiler.
-`cargo` is the Rust's package manager, just like `npm`.
+Rust does not have garbage collection, when the variable goes out of scope rust deallocates the memory resource owned by that variable.
+
+Types that have a known size at compile time are stored on stack. Types that might need a memory to be allocated to them have their values stored on heap while their metadata is stored on stack.
+
+### Data Race
+
+A data race is when reading from data has the possibility of being out of sync due to the existence of a writer to the data at the same time. This happens often in multi-threaded programming.
